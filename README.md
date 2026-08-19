@@ -17,12 +17,12 @@ The website is designed as an online personal profile. It is used to showcase:
 
 - `index.html`: Main webpage file for the portfolio website
 - `README.md`: Project description file
-- `2.jpg`: Image used in the website
+
 
 ## Purpose
 
-This project was created as a personal portfolio website for presenting individual experiences and demonstrating basic web development skills.
+This project was created as a personal portfolio website for presenting individual experiences and show the basic information about myself
 
 
 ## USE OF AI
-This website is created by Codex.
+This website is created by Codex. 
