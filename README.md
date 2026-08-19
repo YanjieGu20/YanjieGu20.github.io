@@ -22,3 +22,7 @@ The website is designed as an online personal profile. It is used to showcase:
 ## Purpose
 
 This project was created as a personal portfolio website for presenting individual experiences and demonstrating basic web development skills.
+
+
+## USE OF AI
+This website is created by Codex.
