@@ -17,70 +17,121 @@
         padding: 0;
       }
 
+      html {
+        min-height: 100%;
+        background: #eef2f7;
+      }
+
       body {
-        font-family: Arial, Helvetica, sans-serif;
-        color: #222;
-        background: #f7f7f7;
-        line-height: 1.5;
+        min-height: 100vh;
+        font-family:
+          "Segoe UI", Arial, Helvetica, sans-serif;
+        color: #1f2937;
+        background:
+          radial-gradient(circle at top, rgba(255, 255, 255, 0.92), transparent 34%),
+          linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+        background-attachment: fixed;
+        line-height: 1.6;
       }
 
       .container {
         max-width: 900px;
         margin: 0 auto;
-        padding: 40px 20px;
+        padding: 48px 20px 36px;
       }
 
       /* ---------- HEADER (photo + name + subheading) ---------- */
       header {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 36px;
       }
 
-      /* Empty space for photo — replace with your own <img> if you like */
       .photo {
-        width: 140px;
-        height: 140px;
+        width: 168px;
+        height: 168px;
         border-radius: 50%;
-        background: #ddd;
-        border: 2px dashed #aaa;
-        margin: 0 auto 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 13px;
+        margin: 0 auto 18px;
+        display: block;
+        object-fit: cover;
+        object-position: center top;
+        border: 5px solid #fff;
+        box-shadow:
+          0 16px 34px rgba(31, 41, 55, 0.17),
+          0 0 0 1px rgba(226, 232, 240, 0.95);
       }
 
       header h1 {
-        font-size: 28px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 38px;
         margin-bottom: 6px;
+        color: #111827;
+        letter-spacing: 0;
       } /* NAME */
       header p {
         font-size: 16px;
-        color: #555;
+        color: #566176;
+        font-weight: 500;
       } /* EXPERIENCES */
+
+      .career-focus {
+        margin-top: 14px;
+      }
+
+      .career-label {
+        display: block;
+        color: #7b8797;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .career-roles {
+        display: block;
+        margin-top: 3px;
+        color: #233044;
+        font-size: 16px;
+        font-weight: 600;
+      }
 
       /* ---------- TABS ---------- */
       .tabs {
         display: flex;
         justify-content: center;
         gap: 10px;
-        margin-bottom: 24px;
+        margin-bottom: 28px;
       }
 
       .tab-button {
-        padding: 10px 22px;
-        border: 1px solid #ccc;
-        background: #fff;
+        min-width: 118px;
+        padding: 11px 24px;
+        border: 1px solid #d7dde8;
+        background: rgba(255, 255, 255, 0.84);
+        color: #334155;
         cursor: pointer;
         font-size: 15px;
-        border-radius: 4px;
+        font-weight: 600;
+        border-radius: 6px;
+        box-shadow: 0 6px 18px rgba(31, 41, 55, 0.05);
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .tab-button:hover {
+        border-color: #9aa7ba;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 22px rgba(31, 41, 55, 0.08);
       }
 
       .tab-button.active {
-        background: #2c3e50;
+        background: #233044;
         color: #fff;
-        border-color: #2c3e50;
+        border-color: #233044;
+        box-shadow: 0 12px 24px rgba(35, 48, 68, 0.18);
       }
 
       /* ---------- TAB CONTENT ---------- */
@@ -93,51 +144,183 @@
 
       .panel {
         background: #fff;
-        border: 1px solid #eee;
-        border-radius: 6px;
-        padding: 24px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 16px 36px rgba(31, 41, 55, 0.08);
       }
 
-      /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
+      .panel p {
+        color: #374151;
+        font-size: 16px;
+      }
+
+      .profile-section {
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .profile-section h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+        color: #111827;
+      }
+
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill-list span {
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        background: #f9fafb;
+        padding: 7px 10px;
+        color: #334155;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .education-item {
+        padding-left: 16px;
+        border-left: 3px solid #d8c58a;
+        margin-bottom: 16px;
+      }
+
+      .education-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .education-years {
+        color: #566176;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .education-item h3 {
+        font-size: 17px;
+        margin: 2px 0 4px;
+        color: #233044;
+      }
+
+      .education-item p {
+        color: #5f6b7d;
+        font-size: 15px;
+      }
+
+      /* ---------- PROJECT CARDS (2-column grid) ---------- */
       .cards {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
       }
 
       .card {
-        border: 1px solid #eee;
-        border-radius: 6px;
+        position: relative;
+        border: 1px solid #dfe5ee;
+        border-radius: 8px;
         overflow: hidden;
         background: #fff;
+        box-shadow: 0 14px 32px rgba(31, 41, 55, 0.08);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
       }
 
-      /* Empty space for project photo */
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: #b9c3d2;
+        box-shadow: 0 20px 42px rgba(31, 41, 55, 0.12);
+      }
+
       .card-photo {
-        height: 120px;
-        background: #ddd;
-        border-bottom: 1px dashed #aaa;
+        min-height: 118px;
+        background:
+          linear-gradient(135deg, #233044 0%, #334155 56%, #7b2633 100%);
+        border-bottom: 1px solid #e2e8f0;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        color: #888;
-        font-size: 12px;
+        gap: 4px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        text-align: center;
       }
 
       .card-text {
-        padding: 14px;
+        padding: 22px;
       }
+
       .card-text h3 {
-        font-size: 16px;
-        margin-bottom: 6px;
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #111827;
       }
+
       .card-text p {
         font-size: 14px;
-        color: #555;
+        color: #5f6b7d;
+      }
+
+      .project-number {
+        color: #d8c58a;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .project-type {
+        font-size: 18px;
+        letter-spacing: 0;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .project-tags span {
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        background: #f9fafb;
+        padding: 5px 8px;
+        color: #334155;
+        font-size: 12px;
+        font-weight: 600;
       }
 
       /* ---------- MOBILE: stack cards vertically ---------- */
       @media (max-width: 640px) {
+        .container {
+          padding-top: 34px;
+        }
+
+        header h1 {
+          font-size: 32px;
+        }
+
+        .tabs {
+          gap: 8px;
+        }
+
+        .tab-button {
+          flex: 1;
+          min-width: 0;
+          padding: 10px 14px;
+        }
+
+        .panel {
+          padding: 24px;
+        }
+
         .cards {
           grid-template-columns: 1fr;
         }
@@ -151,21 +334,23 @@
          HEADER: photo, name, experiences
          ============================================================ -->
       <header>
-        <!-- Replace this div with <img src="your-photo.jpg" class="photo"> -->
-        <div class="photo">Photo</div>
+        <img src="2.jpg" alt="Profile photo" class="photo" />
 
-        <h1>Your Name</h1>
-        <p>Business Analyst · SQL · Python · Tableau</p>
+        <h1>YANJIE GU</h1>
+        <div class="career-focus">
+          <span class="career-label">Career Interests</span>
+          <span class="career-roles">Data Analytics · Business Analyst</span>
+        </div>
       </header>
 
       <!-- ============================================================
          TABS
          ============================================================ -->
       <div class="tabs">
-        <button class="tab-button active" onclick="showTab('about')">
+        <button class="tab-button active" onclick="showTab('about', this)">
           About Me
         </button>
-        <button class="tab-button" onclick="showTab('projects')">
+        <button class="tab-button" onclick="showTab('projects', this)">
           Projects
         </button>
       </div>
@@ -174,12 +359,39 @@
       <div id="about" class="tab-content active">
         <div class="panel">
           <p>
-            I am an emerging data analyst currently pursuing a Master of
-            Management in Analytics (MMA) at McGill University. With a strong
-            background in Psychology and Economics, I bring an understanding of
-            human behavior and data-driven analysis. I am skilled in process
-            automation and data analysis using Python, SQL, and Excel.
+            I am an aspiring data analyst currently pursuing a Master of
+            Management in Analytics (MMA) at McGill University. With an academic
+            background in Psychology and Economics, I bring a multidisciplinary
+            perspective that combines an understanding of human behavior with
+            data-driven analytical thinking. I have experience in data analysis
+            and process automation.
           </p>
+
+          <section class="profile-section education">
+            <h2>Education</h2>
+
+            <div class="education-item">
+              <span class="education-years">2026 - Present</span>
+              <h3>McGill University</h3>
+              <p>Master of Management in Analytics (MMA)</p>
+            </div>
+
+            <div class="education-item">
+              <span class="education-years">2021 - 2025</span>
+              <h3>University of Toronto</h3>
+              <p>Bachelor of Science, Major in Economics and Psychology</p>
+            </div>
+          </section>
+
+          <section class="profile-section">
+            <h2>Skills</h2>
+            <div class="skill-list">
+              <span>SQL</span>
+              <span>Python</span>
+              <span>Tableau</span>
+              <span>Excel</span>
+            </div>
+          </section>
         </div>
       </div>
 
@@ -188,28 +400,47 @@
         <div class="cards">
           <!-- CARD 1 -->
           <div class="card">
-            <div class="card-photo">Project Image</div>
+            <div class="card-photo">
+              <span class="project-number">Project 01</span>
+              <span class="project-type">AI Data Analysis</span>
+            </div>
             <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
+              <h3>AI-Powered Data Agent</h3>
+              <p>
+                Contributed to the development of an AI-powered data agent that
+                allows users to query databases using natural language, retrieve
+                relevant information, interpret results, and generate structured
+                data analysis reports.
+              </p>
+              <div class="project-tags">
+                <span>AI</span>
+                <span>Natural Language Query</span>
+                <span>Database Analytics</span>
+                <span>Report Generation</span>
+              </div>
             </div>
           </div>
 
           <!-- CARD 2 -->
           <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Python,SQL,EXCEL</p>
+            <div class="card-photo">
+              <span class="project-number">Project 02</span>
+              <span class="project-type">Process Automation</span>
             </div>
-          </div>
-
-          <!-- CARD 3 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
             <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
+              <h3>Excel VBA Data Automation Tool</h3>
+              <p>
+                Developed an Excel VBA automation tool to streamline data
+                cleaning and processing tasks, including department
+                categorization and cross-sheet data linking, improving overall
+                workflow efficiency.
+              </p>
+              <div class="project-tags">
+                <span>Excel VBA</span>
+                <span>Data Cleaning</span>
+                <span>Workflow Automation</span>
+                <span>Cross-Sheet Linking</span>
+              </div>
             </div>
           </div>
         </div>
@@ -220,7 +451,7 @@
        SIMPLE TAB SWITCHING SCRIPT
        ============================================================ -->
     <script>
-      function showTab(id) {
+      function showTab(id, button) {
         // hide all tab contents
         document.querySelectorAll(".tab-content").forEach(function (el) {
           el.classList.remove("active");
@@ -231,7 +462,7 @@
         });
         // show the selected tab + highlight the clicked button
         document.getElementById(id).classList.add("active");
-        event.target.classList.add("active");
+        button.classList.add("active");
       }
     </script>
   </body>
